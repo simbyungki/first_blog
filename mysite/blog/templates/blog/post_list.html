@@ -3,7 +3,7 @@
 {% block content %}
 	{% for post in posts %}
 		<li>
-			<span>{{ posts.create_date }}</span>
+			<span>{{ post.author_user }}</span> | <span>{{ post.published_date }}</span>
 			<a href="{% url 'post_detail' pk=post.pk %}"><p>{{ post.title }}</p></a>
 			<!-- <p>
 				{{ post.contents|linebreaksbr }}

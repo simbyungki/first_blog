@@ -3,8 +3,13 @@
 {% block content %}
 	<div class="detail_view">
 		<h2>상세화면</h2>
+		{% if post.author_user %}
+			<p>작성자 : {{ post.author_user }}</p>
+		{% else %}
+			<p>작성자 : Simbyungki</p>
+		{% endif %}
 		<p>{{ post.title }}</p>
-		<span>{{ post.created_date }}</span>
+		<span>{{ post.published_date }}</span>
 		<p>{{ post.contents }}</p>
 	</div>
 	<a href="/">목록</a>
