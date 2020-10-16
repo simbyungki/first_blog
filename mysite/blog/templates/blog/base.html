@@ -12,6 +12,11 @@
 </head>
 <body>
 	<h1>병기 블로그</h1>
+	<div>
+		<a href="{% url 'post_new' %}" class="top-menu">
+			새글 작성 <span class="glyphicon glyphicon-plus"></span>
+		</a>
+	</div>
 	<ul>
 		{% block content %}
         {% endblock %}

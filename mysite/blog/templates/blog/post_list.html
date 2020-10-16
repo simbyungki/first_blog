@@ -5,9 +5,9 @@
 		<li>
 			<span>{{ posts.create_date }}</span>
 			<a href="{% url 'post_detail' pk=post.pk %}"><p>{{ post.title }}</p></a>
-			<p>
+			<!-- <p>
 				{{ post.contents|linebreaksbr }}
-			</p>
+			</p> -->
 		</li>
 	{% endfor %}
 {% endblock %}
