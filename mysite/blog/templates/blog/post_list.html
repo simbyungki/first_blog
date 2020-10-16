@@ -8,27 +8,39 @@
 <body>
 	<h1>병기 글 목록</h1>
 	<ul>
+		{% for post in posts %}
 		<li>
-			<span>published: 14.06.2014, 12:14</span>
-			<a href="javascript:;"><p>title</p></a>
+			<span>{{ posts.create_date }}</span>
+			<a href="javascript:;"><p>{{ post.title }}</p></a>
 			<p>
-				an eu leo quam. Pellentesque ornare sem lacinia quam venenat
+				{{ post.contents|linebreaksbr }}
 			</p>
 		</li>
-		<li>
-			<span>published: 14.06.2014, 12:14</span>
-			<a href="javascript:;"><p>title</p></a>
-			<p>
-				an eu leo quam. Pellentesque ornare sem lacinia quam venenat
-			</p>
-		</li>
-		<li>
-			<span>published: 14.06.2014, 12:14</span>
-			<a href="javascript:;"><p>title</p></a>
-			<p>
-				an eu leo quam. Pellentesque ornare sem lacinia quam venenat
-			</p>
-		</li>
+		{% endfor %}
 	</ul>
+		
+	
+
+<!-- 	
+	
+	<ul>
+		<li>
+			
+		</li>
+		<li>
+			<span>published: 14.06.2014, 12:14</span>
+			<a href="javascript:;"><p>title</p></a>
+			<p>
+				an eu leo quam. Pellentesque ornare sem lacinia quam venenat
+			</p>
+		</li>
+		<li>
+			<span>published: 14.06.2014, 12:14</span>
+			<a href="javascript:;"><p>title</p></a>
+			<p>
+				an eu leo quam. Pellentesque ornare sem lacinia quam venenat
+			</p>
+		</li>
+	</ul> -->
 </body>
 </html>
