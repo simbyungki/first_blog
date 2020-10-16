@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	<div class="detail_view">
+		<h2>상세화면</h2>
+		<p>{{ post.title }}</p>
+		<span>{{ post.created_date }}</span>
+		<p>{{ post.contents }}</p>
+	</div>
+{% endblock %}
