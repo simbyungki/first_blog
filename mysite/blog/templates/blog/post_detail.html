@@ -1,16 +1,17 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-	<div class="detail_view">
-		<h2>상세화면</h2>
-		{% if post.author_user %}
-			<p>작성자 : {{ post.author_user }}</p>
-		{% else %}
-			<p>작성자 : Simbyungki</p>
-		{% endif %}
-		<p>{{ post.title }}</p>
-		<span>{{ post.published_date }}</span>
-		<p>{{ post.contents }}</p>
+	<div class="post-detail">
+		<p class="subject">{{ post.title }}</p>
+		<div class="info">
+			<p class="author">작성자 : {{ post.author }}</p>
+			<span class="date">{{ post.published_date }}</span>
+		</div>
+		<div class="contents">
+			<p>{{ post.contents|linebreaksbr }}</p>
+		</div>
 	</div>
-	<a href="/">목록</a>
+	<div class="page-btns full">
+		<a href="/" class="black">목록</a>
+	</div>
 {% endblock %}

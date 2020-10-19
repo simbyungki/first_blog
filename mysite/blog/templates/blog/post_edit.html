@@ -1,10 +1,24 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-	<h1>새글 작성</h1>
-    <form method="POST" class="post-form">
-		{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">저장</button>
-    </form>
+	<div class="post-regist">
+		<form method="POST" class="post-form">
+			{% csrf_token %}
+			<!-- {{ form.as_p }} -->
+			<div class="forms">
+				<div class="row">
+					<label for="">제목</label>
+					{{ form.title }}
+				</div>
+				<div class="row">
+					<label for="">내용</label>
+					{{ form.contents }}
+				</div>
+			</div>
+			<div class="page-btns two">
+				<a href="/" class="gray">취소</a>
+				<button type="submit" class="black">저장</button>
+			</div>
+		</form>
+	</div>
 {% endblock %}

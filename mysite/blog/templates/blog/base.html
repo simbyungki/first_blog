@@ -4,22 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Post list</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<title>Blog</title>
 	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<h1>병기 블로그</h1>
-	<div>
-		<a href="{% url 'post_new' %}" class="top-menu">
-			새글 작성 <span class="glyphicon glyphicon-plus"></span>
-		</a>
-	</div>
-	<ul>
+	<h1 class="site-title">Blog</h1>
+	<div class="container">
 		{% block content %}
         {% endblock %}
-	</ul>
+	</div>
 </body>
 </html>
