@@ -1,25 +1,28 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-	<div class="list-header">
-		<p class="cnt-info">총 <strong>{{ posts|length }}</strong>건의 글이 있습니다.</p>
-		<a href="{% url 'post_new' %}" class="btn-regist">
-			새글 작성 <span class="glyphicon glyphicon-plus"></span>
-		</a>
+	<div class="post-list">
+		<div class="list-header">
+			<p class="cnt-info">총 <strong>{{ posts|length }}</strong>건의 글이 있습니다.</p>
+			<a href="{% url 'post_new' %}" class="btn-regist">
+				새글 작성 <span class="glyphicon glyphicon-plus"></span>
+			</a>
+
+		</div>
+		<ul class="list">
+			{% for post in posts %}
+				<li>
+					<a href="{% url 'post_detail' pk=post.pk %}">
+						<p class="subject">{{ post.title }}</p>
+						<p class="summary">
+							{{ post.contents }}
+						</p>
+						<p class="infos">
+							<span class="author">{% if post.aution == None %}simbyungki{% else %}{{ post.author }}{% endif %}</span> | <span class="date">{{ post.published_date }}</span>
+						</p>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
 	</div>
-	<ul class="post-list">
-		{% for post in posts %}
-			<li>
-				<a href="{% url 'post_detail' pk=post.pk %}">
-					<p class="subject">{{ post.title }}</p>
-					<p class="summary">
-						{{ post.contents }}
-					</p>
-					<p class="infos">
-						<span class="author">{{ post.author }}</span> | <span class="date">{{ post.published_date }}</span>
-					</p>
-				</a>
-			</li>
-		{% endfor %}
-	</ul>
 {% endblock %}

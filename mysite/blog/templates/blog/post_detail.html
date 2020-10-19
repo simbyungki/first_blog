@@ -4,7 +4,7 @@
 	<div class="post-detail">
 		<p class="subject">{{ post.title }}</p>
 		<div class="info">
-			<p class="author">작성자 : {{ post.author }}</p>
+			<p class="author">작성자 : {% if post.aution == None %}simbyungki{% else %}{{ post.author }}{% endif %}</p>
 			<span class="date">{{ post.published_date }}</span>
 		</div>
 		<div class="contents">
